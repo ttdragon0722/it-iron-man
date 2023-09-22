@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute</title>
+</head>
+<body>
+    <h3>relative和absolute通常會連著用</h3>
+    <div style="
+                position: relative;
+                width: 200px;height: 200px;background-color:rgba(0, 198, 242, 0.512);">
+        relative element
+        <div style="
+                    position: absolute;
+                    right: 0;
+                    width: 100px;height: 100px;background-color: rgb(242, 0, 0);">
+            absolute element
+        </div>
+    </div>
+    <br>
+    <div style="
+                width: 200px;height: 200px;background-color:rgba(0, 242, 60, 0.512);">
+        default element
+        <div style="
+                    position: absolute;
+                    right: 0;
+                    width: 100px;height: 100px;background-color: rgb(242, 0, 0);">
+            absolute element
+        </div>
+    </div>
+</body>
+<style>
+</style>
+</html>

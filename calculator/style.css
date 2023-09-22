@@ -1,0 +1,48 @@
+/* init */
+*,:before,:after {
+    margin: 0;
+}
+* {margin: 0;padding: 0;}
+body {
+    margin: 0;
+}
+button {all: unset;cursor: pointer;height: fit-content;}
+
+
+
+body {
+    background-color: #181818;
+    color: white;
+}
+
+/*  */
+.app {
+    width: 320px;
+    height: 60vh;
+    background-color: white;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    padding: 1.5% 0.5%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    height: 10%;
+    background-color: black;
+    padding: 10% 5%;
+}
+.col {
+    width: 100%;
+    background-color: aqua;
+    height: 100%;
+}
+
+.panel {
+    
+}

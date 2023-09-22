@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="..node-modules/css-init/dist/init.min.css">
+</head>
+
+<body>
+
+    <!-- 蝦皮同款 -->
+    <section class="float-btn">
+        <div class="img-holder">
+            <img src="https://fakeimg.pl/100x100/">
+        </div>
+        <!-- close button -->
+        <button class="close-btn">X</button>
+        <!-- ticket -->
+        <div class="ticket">$299免運卷 ></div>
+    </section>
+
+    <style>
+
+        .float-btn {
+            position: absolute;
+            bottom: 5%;
+            right: 10%;
+        }
+
+        .img-holder {
+            /* 做圓 */
+            width: 100px;
+            height: 100px;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .close-btn {
+            /* 按鈕樣式 */
+            border: 0;
+            padding: 0;
+            text-align: center;
+            /* 做圓 */
+            width: 20px;
+            height: 20px;
+            border-radius: 9999px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .ticket {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+
+            background: #4B0516;
+            color: white;
+
+            position: absolute;
+            width: max-content;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15%;
+        }
+
+    </style>
+
+</body>
+
+</html>
