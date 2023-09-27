@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <button class="open">open menu</button>
+    <section class="menu fixed w-full h-screen top-0 hidden">
+        <!-- background -->
+        <div class="absolute top-0 z-[50] h-full w-full">
+            <div class="absolute bg-block bg-orange-500 w-full h-1/5 left-full"></div>
+            <div class="absolute bg-block bg-orange-500 w-full h-2/5 left-full"></div>
+            <div class="absolute bg-block bg-orange-500 w-full h-3/5 left-full"></div>
+            <div class="absolute bg-block bg-orange-500 w-full h-4/5 left-full"></div>
+            <div class="absolute bg-block bg-orange-500 w-full h-full left-full"></div>
+        </div>
+        <div class="menu-content relative z-[100] opacity-0">
+            <center>
+                <h1 class="text-5xl font-bold text-white">menu</h1>
+            </center>
+        </div>
+    </section>
+
+    <script>
+        $(".open").click(function () {
+            $(".menu").css("display", "block");
+            gsap.to(".bg-block", {
+                left: 0, duration: 0.5, stagger: 0.1,delay:0.5
+            }, "<")
+            gsap.to(".menu-content", {
+                opacity: 1, duration: 1, delay: 0.3
+            })
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jqDemo</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+            <div id="app">
+                <ul class="list">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+        
+                <ul class="list">
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                    <li>d</li>
+                    <li>e</li>
+                </ul>
+        
+                <ul class="list">
+                    <li>I</li>
+                    <li>II</li>
+                    <li>III</li>
+                    <li>IV</li>
+                    <li>V</li>
+                </ul>
+            </div>
+            <script>
+                const list = $(".list");
+
+                list.each(function (i,v) {
+                    console.log(i,v);
+                    console.log($(this).html())
+                })
+            </script>
+        <!-- <h1>viscose的水果籃</h1>
+        <ul class="basket">
+            <li>apple</li>
+            <li>banana</li>
+            <li>grapes</li>
+        </ul>
+
+        <button class="count">
+            click:<span class="times">0</span>
+        </button>
+        <script>
+            // function count() {
+            //     origin = $(".times").html();
+            //     $(".times").html(origin+1);
+            // }
+
+
+            let origin, origin_el;
+            $(".count").click(function (e) {
+                e.preventDefault();
+                origin_el = $(this).children(".times");
+                origin = origin_el.html();
+                origin_el.html(parseInt(origin) + 1);
+            });
+
+            // data source 
+            const fruit = [
+                "apple", "banana", "orange", "grapes"
+            ];
+            const basket_obj = $(".basket");
+
+            for (let i = 0; i < fruit.length; i++) {
+                basket_obj.append("<li>" + fruit[i] + "</li>")
+            }
+
+            $(".basket").append("<li>" + fruit[0] + "</li>");
+            $(".basket").append("<li>" + fruit[1] + "</li>");
+            $(".basket").append("<li>" + fruit[2] + "</li>");
+            $(".basket").append("<li>" + fruit[3] + "</li>");
+
+
+
+        </script> -->
+    </div>
+</body>
+
+</html>
