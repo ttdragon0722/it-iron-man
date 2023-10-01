@@ -1,48 +1,40 @@
-/* init */
-*,:before,:after {
-    margin: 0;
-}
-* {margin: 0;padding: 0;}
-body {
-    margin: 0;
-}
-button {all: unset;cursor: pointer;height: fit-content;}
-
-
-
-body {
-    background-color: #181818;
-    color: white;
-}
-
-/*  */
 .app {
-    width: 320px;
-    height: 60vh;
-    background-color: white;
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-
-    padding: 1.5% 0.5%;
-
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows:  minmax(100px auto) repeat(5,100px);
+}
+.panel {
+    grid-column: 1/-1;
+}
+.col-2 {
+    grid-row: span 2;
+}
+.output {
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
 }
 
-.display {
-    height: 10%;
-    background-color: black;
-    padding: 10% 5%;
-}
-.col {
-    width: 100%;
-    background-color: aqua;
-    height: 100%;
+.history {
+    min-height: 30px;
+    color: rgb(161, 161, 161);
 }
 
 .panel {
-    
+    background-color: rgb(43, 25, 1);
+    padding: 2% 1%;
+    text-align: right;
+}
+
+
+.app>button {
+    padding: 30%;
+    background-color: wheat;
+    font-weight: bold;
+}
+.app>button:hover {
+    background-color:rgba(245, 222, 179, 0.746);
 }
