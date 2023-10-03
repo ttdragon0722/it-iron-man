@@ -111,11 +111,6 @@
                 closePop();
             }
         });
-        $(document).on("click", function (e) {
-            if (!$(e.target).closest(".pop-out-panel").length) {
-                closePop();
-            }
-        });
 
         function closePop () {
             gsap.to(".pop-out", { duration: 0.5, opacity: 0, display: "none" });
