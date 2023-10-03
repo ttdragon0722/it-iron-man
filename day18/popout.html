@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popout</title>
+    <link rel="stylesheet" href="init.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <center>
+        <button class="pop-button">彈跳視窗</button>
+    </center>
+    <!-- popout screen -->
+    <section class="pop-out">
+        <div class="pop-out-panel">
+            <div class="panel-header">
+                <div class="panel-container">
+                    彈跳視窗
+                </div>
+                <button class="panel-button"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="panel-container">
+                    彈跳視窗內文
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .pop-button {
+            font-size: 1.5rem;
+            padding: 1%;
+            border: solid black 2px;
+            font-weight: bold;
+            transition: background-color .5s ease;
+            border-radius: 20px;
+        }
+        .pop-button:hover {
+            background-color: black;
+            color: white;
+            transition: background-color .5s ease;
+        }
+
+        .pop-out {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .pop-out-panel {
+            min-width:425px;
+            min-height: 30vh;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .panel-header {
+            font-size: 1.5rem;
+            font-weight: bold;  
+            font-weight: 900;
+            padding: 2% 0;
+            border-bottom: solid rgba(53, 53, 53, 0.756) 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .panel-content {
+            padding: 3% 0;
+        }
+
+        .panel-container {
+            padding-left:3%;
+            padding-right:3%;
+        }
+
+        .panel-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding-top: 2%;
+            padding-right: 3%;
+        }
+
+    </style>
+
+    <script>
+        $(".pop-out").hide();
+
+        // 點擊彈跳視窗按鈕，使用GSAP顯示彈跳視窗
+        $(".pop-button").click(function () {
+            gsap.to(".pop-out", { duration: 0.5, opacity: 1, display: "block" });
+            gsap.fromTo(".pop-out-panel",{y:"20%"},{y:"-50%",duration:0.5,ease:"power"})
+        });
+
+        // 點擊彈跳視窗的關閉按鈕，使用GSAP隱藏彈跳視窗
+        $(".panel-button").click(function () {
+            closePop();
+        });
+
+        $(".pop-out").click(function () {
+            closePop();
+        });
+
+        $(document).keydown(function (e) {
+            if (e.key === "Escape") {
+                closePop();
+            }
+        });
+        $(document).on("click", function (e) {
+            if (!$(e.target).closest(".pop-out-panel").length) {
+                closePop();
+            }
+        });
+
+        function closePop () {
+            gsap.to(".pop-out", { duration: 0.5, opacity: 0, display: "none" });
+        }
+
+    </script>
+</body>
+</html>
