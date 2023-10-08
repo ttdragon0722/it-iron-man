@@ -1,6 +1,8 @@
 import "./ScrollablePanel.css";
 import Panel from "./Panel"
 
+import { v4 } from "uuid";
+
 const ScrollablePanel = () => {
     return (
         <section className="scrollable-panel">
@@ -12,34 +14,11 @@ const ScrollablePanel = () => {
             </div>
             <div className="scrollable-panel-content">
                 <div className="panel-list">
-                {[
                     {
-                        text:"haha",
-                        price:"87",
-                        tag:"haha"
-                    },
-                    {
-                        text:"title",
-                        price:"187",
-                        tag:"haha"
-                    },
-                    {
-                        text:"iron man",
-                        price:"987",
-                        tag:"haha"
-                    },
-                    {
-                        text:"hello world",
-                        price:"123456",
-                        tag:"haha"
+                        ["HAHA","IRONMAN","IT","REX","哈哈","西西","123"].map(item => {
+                            return <Panel key={v4()} text={item}></Panel>
+                        })
                     }
-                ].map((item) => (
-                    <Panel 
-                        text={item["text"]} 
-                        price={item["price"]} 
-                        tag={item["tag"]}></Panel>
-                ))}
-
                 </div>
             </div>
         </section>

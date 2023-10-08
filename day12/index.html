@@ -11,45 +11,21 @@
 
 <body>
     <div id="app">
-            <div id="app">
-                <ul class="list">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                </ul>
-        
-                <ul class="list">
-                    <li>a</li>
-                    <li>b</li>
-                    <li>c</li>
-                    <li>d</li>
-                    <li>e</li>
-                </ul>
-        
-                <ul class="list">
-                    <li>I</li>
-                    <li>II</li>
-                    <li>III</li>
-                    <li>IV</li>
-                    <li>V</li>
-                </ul>
-            </div>
-            <script>
-                const list = $(".list");
-
-                list.each(function (i,v) {
-                    console.log(i,v);
-                    console.log($(this).html())
-                })
-            </script>
-        <!-- <h1>viscose的水果籃</h1>
+        <h1>viscose的水果籃</h1>
         <ul class="basket">
             <li>apple</li>
             <li>banana</li>
             <li>grapes</li>
         </ul>
+        <script>
+            const basket_obj = $(".basket");
+            [
+                "apple", "banana", "grapes", "durian"
+            ].map((item) => {
+                basket_obj.append("<li>" + item + "</li>")
+            })
+        </script>
+        <!-- 
 
         <button class="count">
             click:<span class="times">0</span>
